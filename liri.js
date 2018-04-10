@@ -1,3 +1,4 @@
+// Include the required packages
 require("dotenv").config();
 
 var keys = require("./keys.js");
@@ -8,8 +9,11 @@ var figlet = require('figlet');
 var moment = require('moment');
 var fs = require("fs");
 
+// Use keys from .env file in constructors to keep them private
 var spotify = new Spotify(keys.spotify);
 var twitter = new Twitter(keys.twitter);
+
+// Initialize global variables
 var spotifyResults = [];
 var command = process.argv[2];
 var criteria = "";
@@ -25,6 +29,7 @@ var nodeTime = moment().format("ddd, MMM D, YYYY");
     nodeTime += moment().format("hh:mm:ss a");
 var textFile = "log.txt";
 
+// Function to search Spotify for a song, format results, and log output
 function spotifySearch(song) {
     spotify.search({ type: 'track', query: song, limit: 5 }, function(err, data) {
         if (err) {
@@ -55,6 +60,7 @@ ${data}
     });
 };
 
+// Function to search Twitter for my top 20 tweets, format output, and log results
 function twitterSearch() {
     
     twitter.get('statuses/user_timeline', {screen_name: '@erinHCPR', count: 20}, function(error, tweets, response) {
@@ -94,6 +100,7 @@ ${tweets[i].text}
     });
 };
 
+// Function to search OMDB for movie title, format response, and log results
 function OMDBSearch(movie) {
     var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
     request(queryURL, function (error, response, body) {
@@ -122,6 +129,7 @@ ${data}
     });
 };
 
+// Function to read command from random.txt and execute the corresponding function as described above
 function doWhatItSays() {
     fs.readFile("random.txt", "utf8", function(error, data) {
 
@@ -154,6 +162,7 @@ function doWhatItSays() {
     });
 };
 
+// Function to log output in log.txt
 function logOutput(output) {
     fs.appendFile(textFile, output, function(err) {
 
@@ -170,6 +179,7 @@ function logOutput(output) {
       });
 };
 
+// If-else handles user input to run the correct function
 if (command === "spotify-this-song") {
     if (criteria.length === 0) {
         spotifySearch("The Sign Ace of Base");

@@ -135,3 +135,20 @@ Command "movie-this " executed at Sat, Apr 7, 2018 at 06:45:13 pm
 • Plot:            A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
 • Actors:          Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
 
+Command "movie-this Alien" executed at Mon, Apr 9, 2018 at 08:36:16 pm
+
+     _    _ _            
+    / \  | (_) ___ _ __  
+   / _ \ | | |/ _ \ '_ \ 
+  / ___ \| | |  __/ | | |
+ /_/   \_\_|_|\___|_| |_|
+                         
+
+• Year:            1979
+• IMDB:            8.5/10
+• Rotten Tomatoes: 97%
+• Country:         UK, USA
+• Language(s):     English
+• Plot:            After a space merchant vessel perceives an unknown transmission as a distress call, its landing on the source moon finds one of the crew attacked by a mysterious lifeform, and they soon realize that its life cycle has merely begun.
+• Actors:          Tom Skerritt, Sigourney Weaver, Veronica Cartwright, Harry Dean Stanton
+
